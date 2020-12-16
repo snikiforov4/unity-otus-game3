@@ -11,7 +11,7 @@ using System.Collections.Generic;
 public class BSPTree : MonoBehaviour {
 
     [SerializeField]
-    bool drawMeshTreeOnStart;
+    bool drawMeshTreeOnStart = default;
 
     public class Node
     {

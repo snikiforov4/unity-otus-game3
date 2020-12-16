@@ -15,25 +15,25 @@ public class SuperCharacterController : MonoBehaviour
     Vector3 debugMove = Vector3.zero;
 
     [SerializeField]
-    QueryTriggerInteraction triggerInteraction;
+    QueryTriggerInteraction triggerInteraction = default;
 
     [SerializeField]
-    bool fixedTimeStep;
+    bool fixedTimeStep = default;
 
     [SerializeField]
-    int fixedUpdatesPerSecond;
+    int fixedUpdatesPerSecond = default;
 
     [SerializeField]
-    bool clampToMovingGround;
+    bool clampToMovingGround = default;
 
     [SerializeField]
-    bool debugSpheres;
+    bool debugSpheres = default;
 
     [SerializeField]
-    bool debugGrounding;
+    bool debugGrounding = default;
 
     [SerializeField]
-    bool debugPushbackMesssages;
+    bool debugPushbackMesssages = default;
 
     /// <summary>
     /// Describes the Transform of the object we are standing on as well as it's CollisionType, as well
@@ -71,7 +71,7 @@ public class SuperCharacterController : MonoBehaviour
     public LayerMask Walkable;
 
     [SerializeField]
-    Collider ownCollider;
+    Collider ownCollider = default;
 
     [SerializeField]
     public float radius = 0.5f;

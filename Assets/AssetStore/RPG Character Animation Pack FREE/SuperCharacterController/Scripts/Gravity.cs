@@ -6,7 +6,7 @@ using RPGCharacterAnims;
 /// Rotates a this transform to align it towards the target transform's position.
 /// </summary>
 public class Gravity : MonoBehaviour{
-	[SerializeField] Transform planet;
+	[SerializeField] Transform planet = default;
 
 	void Update(){
 		Vector3 dir = (transform.position - planet.position).normalized;

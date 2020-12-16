@@ -20,4 +20,12 @@ public class Hero : MonoBehaviour
         Animator.SetBool("Moving", magnitude > 0.01f);
         Animator.SetFloat("Velocity Z", magnitude);
     }
+
+    void FootL()
+    {
+    }
+
+    void FootR()
+    {
+    }
 }

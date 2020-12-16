@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         if (!Input.GetMouseButton(0)) return;
-        var r = Camera.current.ScreenPointToRay(Input.mousePosition);
+        var r = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         Physics.Raycast(r, out hit);
         agent.SetDestination(hit.point);

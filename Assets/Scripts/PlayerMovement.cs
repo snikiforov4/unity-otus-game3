@@ -18,16 +18,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (agent == null)
+            return;
+
         var horizontal = Input.GetAxis("Horizontal");
-        //transform.rotation *= Quaternion.AngleAxis(horizontal * rotationSpeed * Time.deltaTime, Vector3.up);
-        Vector3 side = transform.right * horizontal * movementSpeed * Time.deltaTime;
+        transform.rotation *= Quaternion.AngleAxis(horizontal * rotationSpeed * Time.deltaTime, Vector3.up);
+        Vector3 side = Vector3.zero; // transform.right * horizontal * movementSpeed * Time.deltaTime;
 
         var vertical = Input.GetAxis("Vertical");
         Vector3 forward = transform.forward * vertical * movementSpeed * Time.deltaTime;
         agent.Move(forward + side);
         agent.SetDestination(transform.position + forward + side);
 
-        animator.SetFloat("Horizontal", horizontal);
+        //animator.SetFloat("Horizontal", horizontal);
         animator.SetFloat("Vertical", vertical);
     }
 }

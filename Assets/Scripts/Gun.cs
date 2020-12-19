@@ -19,7 +19,7 @@ public class Gun : AbstractWeapon
 
         if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance)) {
             if (hit.collider && hit.collider.TryGetComponent<PhotonView>(out PhotonView view)) {
-                // hit enemy
+                view.RPC("DamageRPC", RpcTarget.All, damage);
             }
         }
     }

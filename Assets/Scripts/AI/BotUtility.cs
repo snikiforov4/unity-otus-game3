@@ -24,6 +24,9 @@ public class BotUtility : MonoBehaviour
 
     void Update()
     {
+        if (playerAnimator == null)
+            return;
+
         if (!IsNavigating()) {
             playerAnimator.SetFloat("Vertical", 0.0f);
             playerAnimator.SetFloat("Horizontal", 0.0f);

@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e16f0575d73480ebe7b76bb4ae3939, type: 3}
+  m_Name: FindHealth
+  m_EditorClassIdentifier: 
+  m_Parameters:
+  - m_Name: Agent
+    m_RequiredTraits:
+    - {fileID: 11400000, guid: baad879719b613641973613f7a510b90, type: 2}
+    - {fileID: 11400000, guid: 9d24b90158d644873a4d488182380074, type: 2}
+    m_ProhibitedTraits: []
+    m_LimitCount: 0
+    m_LimitComparerType: 
+    m_LimitComparerReference: 
+  - m_Name: Collectible
+    m_RequiredTraits:
+    - {fileID: 11400000, guid: 9d24b90158d644873a4d488182380074, type: 2}
+    - {fileID: 11400000, guid: 3f3529cf6f336a24d846ea199e9c2a2d, type: 2}
+    m_ProhibitedTraits: []
+    m_LimitCount: 0
+    m_LimitComparerType: 
+    m_LimitComparerReference: 
+  m_Preconditions:
+  - m_Operator: <
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: Agent
+      m_Trait: {fileID: 11400000, guid: baad879719b613641973613f7a510b90, type: 2}
+      m_TraitFieldId: 101
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitFieldId: 0
+      m_Enum: {fileID: 0}
+      m_Value: 50
+  - m_Operator: ==
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: Collectible
+      m_Trait: {fileID: 11400000, guid: 3f3529cf6f336a24d846ea199e9c2a2d, type: 2}
+      m_TraitFieldId: 100
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitFieldId: 0
+      m_Enum: {fileID: 11400000, guid: 7a61f5584b3b7654db2de1e0a1e259cc, type: 2}
+      m_Value: Health
+  - m_Operator: ==
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: Collectible
+      m_Trait: {fileID: 11400000, guid: 3f3529cf6f336a24d846ea199e9c2a2d, type: 2}
+      m_TraitFieldId: 102
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: 
+      m_Trait: {fileID: 0}
+      m_TraitFieldId: 0
+      m_Enum: {fileID: 0}
+      m_Value: true
+  m_CreatedObjects: []
+  m_RemovedObjects: []
+  m_ObjectModifiers:
+  - m_Operator: +=
+    m_CustomOperatorType: 
+    m_OperandA:
+      m_Parameter: Agent
+      m_Trait: {fileID: 11400000, guid: baad879719b613641973613f7a510b90, type: 2}
+      m_TraitFieldId: 101
+      m_Enum: {fileID: 0}
+      m_Value: 
+    m_OperandB:
+      m_Parameter: Collectible
+      m_Trait: {fileID: 11400000, guid: 3f3529cf6f336a24d846ea199e9c2a2d, type: 2}
+      m_TraitFieldId: 101
+      m_Enum: {fileID: 0}
+      m_Value: 
+  m_Reward: 0
+  m_CustomRewards:
+  - m_Operator: -=
+    m_Typename: Unity.AI.Planner.Navigation.LocationDistance
+    m_Parameters:
+    - Agent
+    - Collectible

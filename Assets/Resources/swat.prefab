@@ -1801,6 +1801,8 @@ GameObject:
   - component: {fileID: 1502883345202204018}
   - component: {fileID: 6209022645927613855}
   - component: {fileID: 5581791687173387955}
+  - component: {fileID: 4788593413262937473}
+  - component: {fileID: 5556550400570623416}
   m_Layer: 8
   m_Name: swat
   m_TagString: Untagged
@@ -2030,6 +2032,45 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 55
+--- !u!114 &4788593413262937473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4240933718755912996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4163c4525e1464b2d87e13978b85c02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ObjectData:
+    m_Name: swat
+    m_TraitData:
+    - m_TraitDefinition: {fileID: 11400000, guid: c8b640f9d679af443926006f6e096f18,
+        type: 2}
+      m_FieldValues: []
+    - m_TraitDefinition: {fileID: 11400000, guid: 9d24b90158d644873a4d488182380074,
+        type: 2}
+      m_FieldValues:
+      - m_Name: Transform
+        m_BoolValue: 0
+        m_FloatValue: 0
+        m_IntValue: 0
+        m_StringValue: 
+        m_ObjectValue: {fileID: 901154677129404215}
+--- !u!114 &5556550400570623416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4240933718755912996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a85aca1d746924b92a1a346edcf110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4317917584821490919
 GameObject:
   m_ObjectHideFlags: 0

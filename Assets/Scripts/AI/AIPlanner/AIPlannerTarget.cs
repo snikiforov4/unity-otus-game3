@@ -1,4 +1,3 @@
-/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,4 +22,3 @@ public class AIPlannerTarget : MonoBehaviour
         target.SetValue("UniqueId", UniqueId);
     }
 }
-*/

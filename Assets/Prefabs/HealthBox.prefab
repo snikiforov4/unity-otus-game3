@@ -26,6 +26,8 @@ GameObject:
   - component: {fileID: 785606876922470761}
   - component: {fileID: 785606876922470762}
   - component: {fileID: 785606876922470763}
+  - component: {fileID: 7652363972378872890}
+  - component: {fileID: 2616606743122325846}
   m_Layer: 0
   m_Name: HealthBox
   m_TagString: Untagged
@@ -79,6 +81,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
+  observableSearch: 0
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
@@ -101,6 +104,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!114 &785606876922470763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +120,51 @@ MonoBehaviour:
   visual: {fileID: 783633594166736345}
   amount: 50
   respawnTime: 5
+--- !u!114 &7652363972378872890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785606876922470764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4163c4525e1464b2d87e13978b85c02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ObjectData:
+    m_Name: HealthBox
+    m_TraitData:
+    - m_TraitDefinition: {fileID: 11400000, guid: 3f3529cf6f336a24d846ea199e9c2a2d,
+        type: 2}
+      m_FieldValues:
+      - m_Name: Amount
+        m_BoolValue: 0
+        m_FloatValue: 0
+        m_IntValue: 50
+        m_StringValue: 
+        m_ObjectValue: {fileID: 0}
+    - m_TraitDefinition: {fileID: 11400000, guid: 9d24b90158d644873a4d488182380074,
+        type: 2}
+      m_FieldValues:
+      - m_Name: Transform
+        m_BoolValue: 0
+        m_FloatValue: 0
+        m_IntValue: 0
+        m_StringValue: 
+        m_ObjectValue: {fileID: 785606876922470759}
+--- !u!114 &2616606743122325846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785606876922470764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd0b78b177b99a747be400cfbced69d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &785606876484432793
 PrefabInstance:
   m_ObjectHideFlags: 0

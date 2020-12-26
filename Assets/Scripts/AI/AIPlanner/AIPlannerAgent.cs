@@ -1,4 +1,3 @@
-/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -66,4 +65,3 @@ public class AIPlannerAgent : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
     }
 }
-*/

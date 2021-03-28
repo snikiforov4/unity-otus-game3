@@ -1,31 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Photon.Pun;
 using UnityEngine;
-using Photon.Pun;
 
 public class PlayerWeapon : MonoBehaviourPun
 {
     public AbstractWeapon[] weapons;
-    int currentWeapon = -1;
-    Animator animator;
+
+    private int _currentWeapon = -1;
+    private Animator _animator;
 
     void Awake()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         foreach (var weapon in weapons)
             weapon.gameObject.SetActive(false);
     }
 
     void SetWeapon(int index)
     {
-        if (index != currentWeapon) {
-            if (currentWeapon >= 0)
-                weapons[currentWeapon].gameObject.SetActive(false);
+        if (index != _currentWeapon) {
+            if (_currentWeapon >= 0)
+                weapons[_currentWeapon].gameObject.SetActive(false);
 
-            currentWeapon = index;
+            _currentWeapon = index;
 
-            if (currentWeapon >= 0)
-                weapons[currentWeapon].gameObject.SetActive(true);
+            if (_currentWeapon >= 0)
+                weapons[_currentWeapon].gameObject.SetActive(true);
         }
     }
 
@@ -41,9 +40,9 @@ public class PlayerWeapon : MonoBehaviourPun
             }
         }
 
-        if (Input.GetMouseButtonDown(0) && currentWeapon >= 0) {
-            animator.SetTrigger("Shoot");
-            weapons[currentWeapon].Shoot();
+        if (Input.GetMouseButtonDown(0) && _currentWeapon >= 0) {
+            _animator.SetTrigger("Shoot");
+            weapons[_currentWeapon].Shoot();
         }
     }
 }

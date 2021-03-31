@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6488bb7ebddd465cb1951eecc66ee76d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 0}
-  raycastDistance: 0
+  prefabPosition: {fileID: 0}
+  shotDirection: {fileID: 0}
   propulsionForce: 7
   damage: 100
   rocketPrefab: {fileID: 3029558116291661678, guid: 804c39c460aba40e2aba78a1bfa06289,
@@ -138,6 +138,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1950677029737900939}
     m_Modifications:
+    - target: {fileID: -2795338858366243835, guid: 804c39c460aba40e2aba78a1bfa06289,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3029558116291236686, guid: 804c39c460aba40e2aba78a1bfa06289,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,18 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 using Photon.Pun;
-using Photon.Realtime;
+using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour, IPunObservable
 {
-    [Range(0, 100)]
-    public int health;
+    [Range(0, 100)] public int health;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsReading)
-            health = (int)stream.ReceiveNext();
+            health = (int) stream.ReceiveNext();
         else
             stream.SendNext(health);
     }
@@ -20,8 +17,6 @@ public class PlayerHealth : MonoBehaviour, IPunObservable
     [PunRPC]
     void DamageRPC(int damage)
     {
-        health -= damage;
-        if (health < 0)
-            health = 0;
+        health = Math.Max(health - damage, 0);
     }
 }

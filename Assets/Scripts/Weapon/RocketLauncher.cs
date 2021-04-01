@@ -5,11 +5,11 @@ public class RocketLauncher : AbstractWeapon
 {
     public Transform prefabPosition;
     public Transform shotDirection;
-    public float propulsionForce; 
+    public float force; 
 
     public override void Shoot()
     {
-        object[] data = {shotDirection.forward * propulsionForce};
+        object[] data = {shotDirection.forward * force};
         PhotonNetwork.Instantiate("rocket", prefabPosition.position, prefabPosition.rotation, 0, data);
     }
 

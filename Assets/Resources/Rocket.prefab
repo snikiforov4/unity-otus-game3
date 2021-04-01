@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 80
-  blastRadius: 10
+  blastRadius: 6
   timeUntilDisappear: 3.5
 --- !u!114 &6996277738380901511
 MonoBehaviour:

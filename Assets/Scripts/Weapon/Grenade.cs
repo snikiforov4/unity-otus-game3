@@ -1,22 +1,28 @@
 using Photon.Pun;
 using UnityEngine;
 
-public class Rocket : MonoBehaviour, IPunInstantiateMagicCallback
+public class Grenade : MonoBehaviour, IPunInstantiateMagicCallback
 {
 
     public int damage;
     public float blastRadius;
-    public float timeUntilDisappear;
+    public float timeUntilExplosion;
 
     private void OnCollisionEnter(Collision other)
     {
-        DoExplosion(other.contacts[0].point);
+        foreach (var contact in other.contacts)
+        {
+            if (contact.thisCollider.gameObject.TryGetComponent(out PlayerHealth health))
+            {
+                DoExplosion(contact.point);
+            }
+        }
     }
 
     private void DoExplosion(Vector3 explosionEpicenter)
     {
-        var rocketPhotonView = GetComponent<PhotonView>();
-        if (rocketPhotonView.IsMine)
+        var grenadePhotonView = GetComponent<PhotonView>();
+        if (grenadePhotonView.IsMine)
         {
             var colliders = Physics.OverlapSphere(explosionEpicenter, blastRadius);
             foreach (var col in colliders)
@@ -29,11 +35,11 @@ public class Rocket : MonoBehaviour, IPunInstantiateMagicCallback
             }
         }
 
-        rocketPhotonView.RPC("ExplodeRocket", RpcTarget.All, explosionEpicenter);
+        grenadePhotonView.RPC("ExplodeGrenadeRPC", RpcTarget.All, explosionEpicenter);
     }
 
     [PunRPC]
-    private void ExplodeRocket(Vector3 explosionEpicenter)
+    private void ExplodeGrenadeRPC(Vector3 explosionEpicenter)
     {
         var sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         sphere.transform.position = explosionEpicenter;
@@ -45,15 +51,15 @@ public class Rocket : MonoBehaviour, IPunInstantiateMagicCallback
     
     void Update()
     {
-        timeUntilDisappear -= Time.deltaTime;
-        if (timeUntilDisappear <= 0.0f)
-            Destroy(gameObject);
+        timeUntilExplosion -= Time.deltaTime;
+        if (timeUntilExplosion <= 0.0f)
+            DoExplosion(gameObject.transform.position);
     }
 
     public void OnPhotonInstantiate(PhotonMessageInfo info)
     {
         var instantiationData = info.photonView.InstantiationData;
-        var shotDirectionForward = (Vector3) instantiationData[0];
-        GetComponent<Rigidbody>().AddForce(shotDirectionForward, ForceMode.Force);
+        var forceDirection = (Vector3) instantiationData[0];
+        GetComponent<Rigidbody>().AddForce(forceDirection, ForceMode.Impulse);
     }
 }
